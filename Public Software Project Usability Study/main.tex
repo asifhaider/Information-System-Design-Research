@@ -1,0 +1,146 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{soul}
+
+% \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+%     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Custom Commands
+\newcommand{\ie}{\textit{i.e.},\ }
+\newcommand{\eg}{\textit{e.g.},\ }
+\newcommand{\etal}{\textit{et al.} }
+\newcommand{\etc}{{\em etc.}}
+
+\newcommand{\latif}[1]{\textcolor{blue}{\textit{#1}}}
+\newcommand{\joanna}[1]{\textcolor{red}{\textit{#1}}}
+\usepackage{enumitem}           % for numbered enumerations and margins
+\usepackage[most]{tcolorbox}
+\usepackage[parfill]{parskip}
+
+\newcommand{\complexity}[1]{$\mathcal{O}(#1)$}
+
+
+\tcbset{
+  parskip/.style={
+    before={\par\pagebreak[0]\parindent=0pt},
+    after={\parfillskip=0pt\par},
+  },
+}
+\newtcolorbox{resultbox}[1][]{%
+    colback=black!5,
+    colframe=black!5,
+    notitle,
+    sharp corners,
+    borderline west={2pt}{0pt}{red!80!black},
+    enhanced,
+    breakable,
+    boxsep=0pt,
+    left=8pt,right=2pt,top=2pt,bottom=2pt,
+    }
+\newcommand{\rques}[1]{  
+\begin{tcolorbox}[enhanced jigsaw,drop shadow=black!50!white,colback=white,left=2pt,right=2pt,top=2pt,bottom=2pt]
+#1
+\end{tcolorbox}
+}
+
+\pagenumbering{arabic}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+%*************************************************************
+% BEGIN CUSTOMIZATIONS FOR MINTED PACKAGE                    *
+%*************************************************************
+% http://tug.ctan.org/macros/latex/contrib/minted/minted.pdf *
+%*************************************************************
+\usemintedstyle{tango}
+\newminted{python}{frame=single,linenos,numbersep=3pt,fontsize=\scriptsize,xleftmargin=7pt}
+\definecolor{codebg}{rgb}{0.99,0.99,0.99}
+\definecolor{hiliteColor}{rgb}{1,0.92549019607,0.6}
+\definecolor{tainted}{rgb}{0,1,1}
+\newcommand{\highlight}[1]{\colorbox{hiliteColor}{#1}}
+\DeclareRobustCommand{\hlcyan}[1]{{\sethlcolor{tainted}\hl{#1}}}
+\DeclareRobustCommand{\hlred}[1]{{\sethlcolor{red!25}\hl{#1}}}
+\setlength\fboxsep{0.5pt}
+\newcommand{\PythonCode}[3]{%
+\inputminted[%
+  highlightlines={#2},
+  highlightcolor=hiliteColor,
+  escapeinside=||,
+  framerule=0.5pt,
+  bgcolor=white,
+  numbersep=2pt,
+  framesep=15pt,
+  firstnumber={#3}
+]{python}{#1}}
+
+
+
+\newmintinline{java}{fontsize=\scriptsize}
+
+\newminted[JavaSourceCode]{java}{
+    labelposition=topline,
+    frame=single,
+    numbersep=2pt,
+    fontsize=\scriptsize,
+    xleftmargin=5pt,
+    framerule=0.5pt,
+    linenos, rulecolor=\color{gray!60}
+}
+
+
+% CSE 326 ISD Group B2 : 3 \\
+% Roll: 1805112, 1805110, 1805115, 1805113, 1805092, 1805116
+
+\begin{document}
+
+\title{Usability Analysis of Bangladesh e-Passport Portal: A Study on Public Software Project}
+
+\author{\IEEEauthorblockN{Md. Asif Haider, Anika Monir}
+\IEEEauthorblockA{Department of Computer Science and Engineering
+}
+\IEEEauthorblockA{Bangladesh University of Engineering and Technology
+}}
+
+
+\maketitle
+% \begingroup\renewcommand\thefootnote{\textsection}
+% \footnotetext{These authors equally contributed to this work.}
+% \endgroup
+\thispagestyle{plain}
+\pagestyle{plain}
+\begin{abstract}
+Public software projects play a significant role in making the lives of the citizens of a country much easier by providing public services at a large scale. The E-passport portal is such a website with a huge number of clients based in the context of Bangladesh. Hence, studying the web application from a Software Engineering and System Design point of view is crucial, especially when there is a scope for improving user experience. In this study, we analyze the web application and its features based on public opinion and first-hand testing. Finally, we suggest spot-on recommendations to improve the project further.
+\end{abstract}
+
+\begin{IEEEkeywords}
+% code generation, complexity, transformer, zero-shot prompting,  pre-trained model, GitHub copilot
+public software projects, questionnaire survey, e-passport, user experience
+\end{IEEEkeywords}
+
+\input{Files/intro}
+
+% \input{Files/background}
+% \input{Files/rquestions}
+
+\input{Files/methodology}
+\input{Files/result}
+
+\input{Files/discussion}
+
+% \input{Files/threats}
+% \input{Files/relatedwork}
+% \input{Files/conclusion}
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+\end{document}
